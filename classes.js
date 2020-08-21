@@ -10,9 +10,32 @@ Pokemon
  - Pokemon receives sleep as a method.
     - This method will return the pokemon's health to 100
 - Pokemon receives levelUp as a method.
-    - This method should increase the pokemon's level by 1
+    - This method should increase the pokemon's level by 1*/
 
-FireType
+    class Pokemon {
+        constructor (attributes){
+        this.name = attributes.name;
+        this.height= attributes.height;
+        this.weight= attributes.weight;
+        this.levels = attributes.level;
+        this.health = 50;
+    }
+
+levelUp(){
+    this.level += 1 //++ or += but cant do just plus
+    }
+
+sleep (){
+ health =100
+    }
+  
+}
+
+
+
+
+
+/*FireType
  - Now that we have a Pokemon as our base class, we'll build our FireType class.
  - FireType uses the same attributes that have been set up by Pokemon
  - FireType has the following unique props:
@@ -24,6 +47,17 @@ FireType
 */
 
 
+class FireType extends Pokemon{
+    constructor (attributes){
+        super (attributes)
+        this.type = 'fire'
+        this.nickname = attributes.nickname
+        this.weakness = ['water', 'ground', 'rock']
+    }
+
+    fireAttack(){
+        return `${this.name} just blew a giant fireball.`
+    }
 
 
 
